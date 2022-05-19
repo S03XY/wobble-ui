@@ -1,0 +1,104 @@
+{
+    "version": "1.0.0",
+    "name": "wobble_synth",
+    "instructions": [
+      {
+        "name": "buyFirstSong",
+        "accounts": [
+          {
+            "name": "user0",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "user",
+            "isMut": true,
+            "isSigner": true
+          },
+          {
+            "name": "tokenmint",
+            "isMut": false,
+            "isSigner": false
+          },
+          {
+            "name": "tokenProgramId",
+            "isMut": false,
+            "isSigner": false
+          },
+          {
+            "name": "source",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "destination",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "systemProgram",
+            "isMut": false,
+            "isSigner": false
+          }
+        ],
+        "args": []
+      },
+      {
+        "name": "buySong",
+        "accounts": [
+          {
+            "name": "user0",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "wallet",
+            "isMut": false,
+            "isSigner": true
+          },
+          {
+            "name": "tokenProgramId",
+            "isMut": false,
+            "isSigner": false
+          },
+          {
+            "name": "source",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "destination",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "tokenmint",
+            "isMut": false,
+            "isSigner": false
+          }
+        ],
+        "args": []
+      }
+    ],
+    "accounts": [
+      {
+        "name": "User0",
+        "type": {
+          "kind": "struct",
+          "fields": [
+            {
+              "name": "wallet",
+              "type": "publicKey"
+            },
+            {
+              "name": "songsCount",
+              "type": "u16"
+            }
+          ]
+        }
+      }
+    ],
+    "metadata": {
+      "address": "8ptgXekj3hdRqdXvrW8cr55ZoMNLeyqa7Xp13XAAUMBQ"
+    }
+  }
