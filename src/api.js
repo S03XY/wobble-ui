@@ -79,7 +79,11 @@ export const buy = async () => {
   );
 
   const [currentBuyer, bump] = await PublicKey.findProgramAddress(
-    [Buffer.Buffer.from(BUYER)],
+    [
+      Buffer.Buffer.from(BUYER),
+      wallet._publicKey.toBuffer(),
+      tokenmint.toBuffer(),
+    ],
     new PublicKey(idl.metadata.address)
   );
 
@@ -130,12 +134,20 @@ export const buy = async () => {
 };
 
 export const getcurrentuserbuyinfo = async () => {
+  const wallet = window.solana;
+
+  const tokenmint = new PublicKey(
+    "5bQgFyYBjCeyzwWvVxwfuauVzGaGcUBCvNhRLNKrPUy9"
+  );
   const [currentBuyer, bump] = await PublicKey.findProgramAddress(
-    [Buffer.Buffer.from(BUYER)],
+    [
+      Buffer.Buffer.from(BUYER),
+      wallet._publicKey.toBuffer(),
+      tokenmint.toBuffer(),
+    ],
     new PublicKey(idl.metadata.address)
   );
   const connection = new Connection(clusterApiUrl(Network));
-  const wallet = window.solana;
 
   const provider = new anchor.AnchorProvider(
     connection,
